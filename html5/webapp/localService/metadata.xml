@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZAPI_MEDIOS_PAGO_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="autorizar_pago" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OrgVentas"/>
+                    <PropertyRef Name="DocVentas"/>
+                </Key>
+                <Property Name="OrgVentas" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false"/>
+                <Property Name="DocVentas" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false"/>
+                <Property Name="IdPago" Type="Edm.String" MaxLength="50" sap:unicode="false"/>
+                <Property Name="FechaPago" Type="Edm.String" MaxLength="10" sap:unicode="false"/>
+            </EntityType>
+            <EntityContainer Name="ZAPI_MEDIOS_PAGO_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="autorizar_pagoSet" EntityType="ZAPI_MEDIOS_PAGO_SRV.autorizar_pago" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="https://soaqa.sap.navent.com:44300/sap/opu/odata/sap/ZAPI_MEDIOS_PAGO_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://soaqa.sap.navent.com:44300/sap/opu/odata/sap/ZAPI_MEDIOS_PAGO_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

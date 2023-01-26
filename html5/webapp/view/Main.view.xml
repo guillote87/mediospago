@@ -1,0 +1,27 @@
+<mvc:View controllerName="legacy.mediopago.controller.Main" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Shell>
+        <Page id="page" title="{i18n>title}">
+            <Panel headerText="Medios de Pagos">
+                <OverflowToolbar id="overBar">
+                    <ToolbarSpacer />
+                    <Button type="Accept" icon="sap-icon://save">
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="NeverOverflow" />
+                        </layoutData>
+                    </Button>
+                </OverflowToolbar>
+                <f:SimpleForm id="" editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false" columnsL="1">
+                    <Label text="{i18n>orgventa}" labelFor="orgventa" required="true" design="Bold"  />
+                    <Input width="50%" class="sapUiSmallMarginBottom"/>
+                    <Label text="{i18n>docventa}" labelFor="docventa" required="true" design="Bold"  />
+                    <Input width="50%" class="sapUiSmallMarginBottom"/>
+                    <Label text="{i18n>idpago}" labelFor="idpago" required="true" design="Bold"  />
+                    <Input width="50%" class="sapUiSmallMarginBottom" />
+                    <Label text="{i18n>fechapago}" labelFor="fechapago" required="true" design="Bold" />
+                    <DatePicker id="fechapago" width="50%" change="handleChange" class="sapUiSmallMarginBottom"/>
+                </f:SimpleForm>
+            </Panel>
+            <content />
+        </Page>
+    </Shell>
+</mvc:View>
