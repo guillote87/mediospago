@@ -5,7 +5,7 @@ sap.ui.define([], function () {
 			switch (sStatus) {
 				case "success":
 					return "Success";
-				case "failed":
+				case "error":
 					return "Error";
 				default:
 					return sStatus;

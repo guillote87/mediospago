@@ -1,41 +1,47 @@
-<mvc:View controllerName="legacy.mediopago.controller.Main" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="legacy.mediopago.controller.Main" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
     <Shell>
         <Page id="page" title="{i18n>title}">
             <Panel>
                 <OverflowToolbar id="overBar">
                     <ToolbarSpacer />
-                    <Button type="Accept" icon="sap-icon://save" press="onSave">
+                    <Button type="Accept" visible="false" icon="sap-icon://save" press="onSave">
                         <layoutData>
                             <OverflowToolbarLayoutData priority="NeverOverflow" />
                         </layoutData>
                     </Button>
                 </OverflowToolbar>
-                <f:SimpleForm id="" editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false" columnsL="1">
+                <f:SimpleForm class="border" id="" editable="true" layout="ResponsiveGridLayout" >
                     <Label text="{i18n>orgventa}" labelFor="orgVenta" required="true" design="Bold" />
-                    <Input id="orgVenta" width="50%" maxLength="4" class="sapUiSmallMarginBottom" />
+                    <Input id="orgVenta" width="100%" maxLength="4" class="sapUiSmallMarginBottom" />
                     <Label text="{i18n>docventa}" labelFor="docVenta" required="true" design="Bold" />
-                    <Input id="docVenta" width="50%" maxLength="10" class="sapUiSmallMarginBottom" />
+                    <Input id="docVenta" width="100%" maxLength="10" class="sapUiSmallMarginBottom" />
                     <Label text="{i18n>idpago}" labelFor="idPago" required="true" design="Bold" />
-                    <Input id="idPago" width="50%" class="sapUiSmallMarginBottom" />
+                    <Input id="idPago" width="100%" class="sapUiSmallMarginBottom" />
                     <Label text="{i18n>fechapago}" labelFor="fechaPago" required="true" design="Bold" />
-                    <DatePicker id="fechaPago" width="50%" change="handleChange" />
+                    <DatePicker id="fechaPago" width="100%" change="handleChange" />
                 </f:SimpleForm>
-                <Panel>
-                    <Button text="Guardar" press="onSave" class="sapUiSmallMarginBottom" />
-                </Panel>
+
+                <FlexBox alignItems="Center"  class="border" justifyContent="End">
+                    <items>
+                        <Button text="{i18n>btnEnviar}" press="onSave" class="sapUiSmallMarginBottom sapUiSmallMarginEnd" />
+                    </items>
+                </FlexBox>
+
                 <Panel id="estadoPagoList" visible="false">
                     <List headerText="Estados de Pago" items="{estados>/}">
                         <items>
                             <CustomListItem>
-                                <HBox >
-                                    <ObjectStatus class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" 
-                                                  text="{estados>message}" 
-                                                  icon="{
+                                <HBox>
+                                    <ObjectStatus
+                                        class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"
+                                        text="{estados>message}"
+                                        icon="{
                                                     	path: 'estados>severity',
-					                                    formatter: '.formatter.severityIcon'}" 
-                                                  state="{
+					                                    formatter: '.formatter.severityIcon'}"
+                                        state="{
                                                     	path: 'estados>severity',
-					                                    formatter: '.formatter.severity'}" />
+					                                    formatter: '.formatter.severity'}"
+                                    />
                                 </HBox>
                             </CustomListItem>
                         </items>
