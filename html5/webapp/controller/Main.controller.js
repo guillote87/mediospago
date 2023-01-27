@@ -19,7 +19,7 @@ sap.ui.define([
             },
             onSave: function () {
                 var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({ pattern: "YYYYMMdd" });
-
+                this.byId("estadoPagoList").setVisible(false)
 
                 var orgVenta = this.getView().byId("orgVenta").getValue();
                 var docVenta = this.getView().byId("docVenta").getValue();
@@ -51,12 +51,12 @@ sap.ui.define([
                             var oModel = new JSONModel(oJsonModel);
                             that.getView().setModel(oModel,"estados");
                             that.byId("estadoPagoList").setVisible(true)
-
-                            MessageToast.show(hdrMessageObject.message);
-
-
                         }, error: function (e) {
-                            MessageToast.show(e);
+                            console.log(e)
+                            var errorMessage = e["responseText"];
+                            var errorMessageObject = JSON.parse(errorMessage);
+                            console.log(errorMessageObject)
+                            MessageToast.show(errorMessageObject.error.message.value);
                         }
 
                     }

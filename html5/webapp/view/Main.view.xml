@@ -23,8 +23,8 @@
                 <Panel>
                     <Button text="Guardar" press="onSave" class="sapUiSmallMarginBottom" />
                 </Panel>
-                <Panel >
-                <List headerText="Estados de Pago" visible="false" id="estadoPagoList" items="{estados>/}">
+                <Panel  id="estadoPagoList" visible="false">
+                <List headerText="Estados de Pago"   items="{estados>/}">
                 <items>
                 <StandardListItem title="{estados>message}"  info="{estados>severity}" 
                 infoState="{
