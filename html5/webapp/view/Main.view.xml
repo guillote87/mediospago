@@ -4,22 +4,36 @@
             <Panel headerText="Medios de Pagos">
                 <OverflowToolbar id="overBar">
                     <ToolbarSpacer />
-                    <Button type="Accept" icon="sap-icon://save">
+                    <Button type="Accept" icon="sap-icon://save" press="onSave">
                         <layoutData>
                             <OverflowToolbarLayoutData priority="NeverOverflow" />
                         </layoutData>
                     </Button>
                 </OverflowToolbar>
                 <f:SimpleForm id="" editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false" columnsL="1">
-                    <Label text="{i18n>orgventa}" labelFor="orgventa" required="true" design="Bold"  />
-                    <Input width="50%" class="sapUiSmallMarginBottom"/>
-                    <Label text="{i18n>docventa}" labelFor="docventa" required="true" design="Bold"  />
-                    <Input width="50%" class="sapUiSmallMarginBottom"/>
-                    <Label text="{i18n>idpago}" labelFor="idpago" required="true" design="Bold"  />
-                    <Input width="50%" class="sapUiSmallMarginBottom" />
-                    <Label text="{i18n>fechapago}" labelFor="fechapago" required="true" design="Bold" />
-                    <DatePicker id="fechapago" width="50%" change="handleChange" class="sapUiSmallMarginBottom"/>
+                    <Label text="{i18n>orgventa}" labelFor="orgVenta" required="true" design="Bold" />
+                    <Input id="orgVenta" width="50%" maxLength="4" class="sapUiSmallMarginBottom" />
+                    <Label text="{i18n>docventa}" labelFor="docVenta" required="true" design="Bold" />
+                    <Input id="docVenta" width="50%" maxLength="10" class="sapUiSmallMarginBottom" />
+                    <Label text="{i18n>idpago}" labelFor="idPago" required="true" design="Bold" />
+                    <Input id="idPago" width="50%" class="sapUiSmallMarginBottom" />
+                    <Label text="{i18n>fechapago}" labelFor="fechaPago" required="true" design="Bold" />
+                    <DatePicker id="fechaPago" width="50%" change="handleChange" />
                 </f:SimpleForm>
+                <Panel>
+                    <Button text="Guardar" press="onSave" class="sapUiSmallMarginBottom" />
+                </Panel>
+                <Panel >
+                <List headerText="Estados de Pago" visible="false" id="estadoPagoList" items="{estados>/}">
+                <items>
+                <StandardListItem title="{estados>message}"  info="{estados>severity}" 
+                infoState="{
+					path: 'estados>severity',
+					formatter: '.formatter.severity'}">
+                    </StandardListItem>
+                </items>
+                </List>
+                </Panel>
             </Panel>
             <content />
         </Page>
