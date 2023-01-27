@@ -1,7 +1,7 @@
-<mvc:View controllerName="legacy.mediopago.controller.Main" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="legacy.mediopago.controller.Main" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
     <Shell>
         <Page id="page" title="{i18n>title}">
-            <Panel >
+            <Panel>
                 <OverflowToolbar id="overBar">
                     <ToolbarSpacer />
                     <Button type="Accept" icon="sap-icon://save" press="onSave">
@@ -26,9 +26,18 @@
                 <Panel id="estadoPagoList" visible="false">
                     <List headerText="Estados de Pago" items="{estados>/}">
                         <items>
-                            <StandardListItem title="{estados>message}" info="{estados>severity}" infoState="{
-					path: 'estados>severity',
-					formatter: '.formatter.severity'}" />
+                            <CustomListItem>
+                                <HBox>
+                                    <ObjectStatus class="sapUiSmallMarginBottom" 
+                                                  text="{estados>message}" 
+                                                  icon="{
+                                                    	path: 'estados>severity',
+					                                    formatter: '.formatter.severityIcon'}" 
+                                                  state="{
+                                                    	path: 'estados>severity',
+					                                    formatter: '.formatter.severity'}" />
+                                </HBox>
+                            </CustomListItem>
                         </items>
                     </List>
                 </Panel>
