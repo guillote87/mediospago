@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/api/",
+        "uri": "/sap/opu/odata/sap/ZAPI_MEDIOS_PAGO_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],

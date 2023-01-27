@@ -23,18 +23,20 @@
                 <Panel>
                     <Button text="Guardar" press="onSave" class="sapUiSmallMarginBottom" />
                 </Panel>
-                <Panel  id="estadoPagoList" visible="false">
-                <List headerText="Estados de Pago"   items="{estados>/}">
-                <items>
-                <StandardListItem title="{estados>message}"  info="{estados>severity}" 
-                infoState="{
+                <Panel id="estadoPagoList" visible="false">
+                    <List headerText="Estados de Pago" items="{estados>/}">
+                        <items>
+                            <StandardListItem title="{estados>message}" info="{estados>severity}" infoState="{
 					path: 'estados>severity',
-					formatter: '.formatter.severity'}">
-                    </StandardListItem>
-                </items>
-                </List>
+					formatter: '.formatter.severity'}" />
+                        </items>
+                    </List>
                 </Panel>
             </Panel>
+            <FlexBox alignItems="Center" justifyContent="Center">
+                <Text text="Powered by" />
+                <Image src="https://gqtesting.s3.amazonaws.com/logo.png" width="100px" />
+            </FlexBox>
             <content />
         </Page>
     </Shell>
