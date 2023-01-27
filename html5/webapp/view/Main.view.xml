@@ -1,7 +1,7 @@
 <mvc:View controllerName="legacy.mediopago.controller.Main" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
     <Shell>
         <Page id="page" title="{i18n>title}">
-            <Panel headerText="Medios de Pagos">
+            <Panel >
                 <OverflowToolbar id="overBar">
                     <ToolbarSpacer />
                     <Button type="Accept" icon="sap-icon://save" press="onSave">
