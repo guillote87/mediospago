@@ -27,8 +27,8 @@
                     <List headerText="Estados de Pago" items="{estados>/}">
                         <items>
                             <CustomListItem>
-                                <HBox>
-                                    <ObjectStatus class="sapUiSmallMarginBottom" 
+                                <HBox >
+                                    <ObjectStatus class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" 
                                                   text="{estados>message}" 
                                                   icon="{
                                                     	path: 'estados>severity',
